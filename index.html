@@ -13,9 +13,9 @@
     nightDayHandler(this);
   ">
   <ol id="nav">
-    <li><a onclick="fetchPage('html')">html</a></li>
-    <li><a onclick="fetchPage('css')">css</a></li>
-    <li><a onclick="fetchPage('javascript')">javascript</a></li>
+    <li><a href="#!html" onclick="fetchPage('html')">html</a></li>
+    <li><a href="#!css" onclick="fetchPage('css')">css</a></li>
+    <li><a href="#!javascript" onclick="fetchPage('javascript')">javascript</a></li>
   </ol>
   <article>
 
@@ -27,6 +27,12 @@
               document.querySelector('article').innerHTML = text;
           })
       })
+    }
+
+    if(location.hash){
+      fetchPage(location.hash.substr(2));
+    }else{
+      fetchPage('welcome');
     }
   </script>
 </body>
