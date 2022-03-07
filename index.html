@@ -13,30 +13,21 @@
     nightDayHandler(this);
   ">
   <ol id="nav">
-    <li><a onclick="
-    fetch('html').then(function(response){
-        response.text().then(function(text){
-            document.querySelector('article').innerHTML = text;
-        })
-    })
-    ">HTML</a></li>
-    <li><a onclick="
-    fetch('css').then(function(response){
-        response.text().then(function(text){
-            document.querySelector('article').innerHTML = text;
-        })
-    })
-    ">css</a></li>
-    <li><a onclick="
-    fetch('javascript').then(function(response){
-        response.text().then(function(text){
-            document.querySelector('article').innerHTML = text;
-        })
-    })
-    ">javascript</a></li>
+    <li><a onclick="fetchPage('html')">javascript</a></li>
+    <li><a onclick="fetchPage('css')">javascript</a></li>
+    <li><a onclick="fetchPage('javascript')">javascript</a></li>
   </ol>
   <article>
 
   </article>
+  <script type="text/javascript">
+    function fetchPage(name){
+      fetch(name).then(function(response){
+          response.text().then(function(text){
+              document.querySelector('article').innerHTML = text;
+          })
+      })
+    }
+  </script>
 </body>
 </html>
